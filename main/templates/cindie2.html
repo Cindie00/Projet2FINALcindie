@@ -1,0 +1,38 @@
+<!--source = https://travishorn.com/stacked-bar-chart-with-chart-js-846ebdf11c4e-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Stacked Bar Chart</title>
+</head>
+<body>
+<canvas id="chart"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById('chart');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {labels: ['famille1','famille2','famille3','famille4'],
+  datasets: [{
+    label: 'Nombres de vaches mortes prématurément',
+    data: [10,5,20,40],
+    backgroundColor:'rgb(100,0,100)' // violet
+  },
+  {
+    label: 'Nombre de vaches vivantes',
+    data: [75,80,100,120],
+    backgroundColor: 'rgb(255,159,64)' // orange
+  }
+
+  ]},
+  options: {scales: {
+    xAxes: [{ stacked: true }],
+    yAxes: [{ stacked: true }]
+  }}
+});
+</script>
+</body>
+</html>
+

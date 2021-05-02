@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<script> src="https://cdn.jsdelivr.net/npm/chart.js" </script>
+<canvas id ="NombreDeDécèsPrématurésParFamille" width="200" height="100" ></canvas>
+<script>
+  var ctx = document.getElementById('NombreDeDécèsPrématurésParFamille').getContext('2d');
+  var NombreDeDécèsPrématurésParFamille = new Chart(ctx,{
+    type: 'bar',
+    text:'Nombre de décès prématurés par famille',
+    data: {
+      labels: f,
+      datasets: [
+        {
+        label: 'Nombre de vaches vivantes dans cette famille',
+        data: v,
+        backgroundColor: ['rgb(100,0,100,0.2)'],
+        borderColor: ['rgb(100,0,100)'],
+        borderWidth: 1
+
+      },
+        { label: 'Nombre de vaches mortes dans cette famille',
+          data: [1,3,5],
+          backgroundColor: ['rgb(255,159,64,0.4)'],
+          borderColor: ['rgb(255,159,64)'],
+          borderWidth: 1
+        }]
+    }
+  })
+
+
+</script>
+
+</body>
+</html>
